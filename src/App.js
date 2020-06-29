@@ -1,34 +1,32 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Card from "./Pages/Card";
-import Cards from "./Pages/Cards";
-import Types from "./Pages/Types";
-import Error404 from "./Pages/Error404";
+import "./App.css";
 
-import Header from "./Components/Header";
+import Types from "./Pages/Types"
+import Cards from "./Pages/Cards"
 
 function App() {
   return (
     <div className="App">
       <Router>
         <div>
-          <Header />
+          <p>Headers</p>
           <Switch>
             <Route path="/error404">
-              <Error404 />
+              <p>Error 404</p>
             </Route>
             <Route exact path="/:type">
-              <Cards />
+              <Cards/>
             </Route>
             <Route exact path="/:type/:id">
-              <Card />
+              <p>Card</p>
             </Route>
             <Route exact path="/">
               <Types />
             </Route>
             <Route path="*">
-              <Error404 />
+              <p>Error 404</p>
             </Route>
           </Switch>
         </div>
