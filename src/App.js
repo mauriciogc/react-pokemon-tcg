@@ -3,30 +3,34 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 
-import Types from "./Pages/Types"
-import Cards from "./Pages/Cards"
+import Types from "./Pages/Types";
+import Cards from "./Pages/Cards";
+import Card from "./Pages/Card";
+import Error404 from "./Pages/Error404";
+
+import Header from "./Components/Header";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <div>
-          <p>Headers</p>
+          <Header/>
           <Switch>
             <Route path="/error404">
-              <p>Error 404</p>
+              <Error404 />
             </Route>
             <Route exact path="/:type">
-              <Cards/>
+              <Cards />
             </Route>
             <Route exact path="/:type/:id">
-              <p>Card</p>
+              <Card />
             </Route>
             <Route exact path="/">
               <Types />
             </Route>
             <Route path="*">
-              <p>Error 404</p>
+              <Error404 />
             </Route>
           </Switch>
         </div>
