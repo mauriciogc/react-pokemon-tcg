@@ -61,7 +61,8 @@ let defaultGlobal = {
       img: Water,
     },
   },
-  listType: []
+  listTypes: [],
+  cardsByType:{}
 };
 
 export { defaultGlobal };

@@ -9,7 +9,8 @@ import Icon from "../Components/Icon";
 import Loading from "../Components/Loading";
 import Title from "../Components/Title";
 
-import CARDS from "../Mocks/Cards";
+//import CARDS from "../Mocks/Cards";
+import useCards from "../Hooks/useCards";
 
 const useStyles = createUseStyles({
 	ul: {
@@ -54,9 +55,18 @@ const Cards = () => {
 		isFinal,
 		nextPage,
 		moreLoading,
-	} = CARDS;
+	} = useCards(type);
+
+	/*const {
+    title: { bg, img },
+    cards,
+    isFinal,
+    nextPage,
+    moreLoading,
+  } = CARDS;*/
 
 	if (!img) return <Redirect to="/error404" />;
+	if (!cards.length) return <Loading color={bg} middle />;
 
 	return (
 		<Fragment>

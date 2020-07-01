@@ -5,7 +5,7 @@ import { pokemonService } from "../utils/axios.pokemontcg";
 const useTypes = () => {
 	//const [types, getTypes] = useState([]);
 	const { dataGlobal, setData } = useContext(GlobalContext);
-	const { localTypes, listType } = dataGlobal;
+	const { localTypes, listTypes } = dataGlobal;
 	const refLocalTypes = useRef(localTypes);
 
 	useEffect(() => {
@@ -15,17 +15,17 @@ const useTypes = () => {
 				name: type,
 			}));
 			//getTypes(list)
-			setData({ listType: list });
+			setData({ listTypes: list });
 		};
 
 		const fnError = (error) => console.warn("Error", error);
 
-		if (!listType.length) {
+		if (!listTypes.length) {
 			pokemonService.get("/types").then(fnThen).catch(fnError);
 		}
-	}, [listType, setData]);
+	}, [listTypes, setData]);
 
-	return { types: listType };
+	return { types: listTypes };
 };
 
 export default useTypes;
