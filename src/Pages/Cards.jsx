@@ -64,7 +64,6 @@ const Cards = () => {
     nextPage,
     moreLoading,
   } = CARDS;*/
-
 	if (!img) return <Redirect to="/error404" />;
 	if (!cards.length) return <Loading color={bg} middle />;
 

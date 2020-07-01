@@ -31,7 +31,14 @@ const useCards = (id) => {
 
 		const fnThen = ({ data }) => {
 			setOrderCards(false);
+
+			const newCards = data.cards.reduce((arr, data) => {
+				arr[data.id] = data;
+				return arr;
+			}, {});
+
 			setData({
+				cardsById: { ...dataGlobal.cardsById, ...newCards },
 				cardsByType: {
 					...dataGlobal.cardsByType,
 					[id]: {

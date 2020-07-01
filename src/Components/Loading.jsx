@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
 
 const useStyles = createUseStyles({
 	container: {
@@ -70,6 +71,11 @@ const Loading = ({ color = "#ed1d25", middle = false }) => {
 			</div>
 		</div>
 	);
+};
+
+Loading.propTypes = {
+	color: PropTypes.string,
+	middle: PropTypes.bool,
 };
 
 export default Loading;

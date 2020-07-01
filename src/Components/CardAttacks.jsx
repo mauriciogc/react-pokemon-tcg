@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
 
 import CustomContainer from "./CustomContainer";
 import Icon from "./Icon";
@@ -41,11 +42,31 @@ const CardAttacks = ({ data }) => {
 					</span>
 					<H3 text={name} />
 					{damage && <span className={classes.damage}>{damage}</span>}
-					{text && <Paragraph text={text} />}
+					{<Paragraph text={text} />}
 				</Fragment>
 			))}
 		</CustomContainer>
 	);
+};
+
+CardAttacks.propTypes = {
+	data: PropTypes.shape({
+		title: PropTypes.string.isRequired,
+		attacks: PropTypes.arrayOf(
+			PropTypes.shape({
+				cost: PropTypes.arrayOf(
+					PropTypes.shape({
+						bg: PropTypes.string,
+						name: PropTypes.string,
+						img: PropTypes.string,
+					})
+				),
+				name: PropTypes.string,
+				text: PropTypes.string,
+				damage: PropTypes.string,
+			})
+		),
+	}),
 };
 
 export default CardAttacks;

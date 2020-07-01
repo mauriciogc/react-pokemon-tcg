@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
 
 const useStyles = createUseStyles({
 	container: {
@@ -15,6 +16,11 @@ const CustomContainer = ({ children, alignItems = "center" }) => {
 	const classes = useStyles({ alignItems });
 
 	return <div className={classes.container}>{children}</div>;
+};
+
+CustomContainer.propTypes = {
+	alignItems: PropTypes.string,
+	children: PropTypes.array,
 };
 
 export default CustomContainer;

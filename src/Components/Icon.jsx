@@ -2,6 +2,7 @@ import React from "react";
 import { Img } from "react-image";
 import { createUseStyles } from "react-jss";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import PropTypes from "prop-types";
 
 const sizes = { xsmall: "17px", small: "35px", medium: "75px", big: "150px" };
 
@@ -71,6 +72,16 @@ const Icon = (props) => {
 			{text && <div className={classes.text}>{text}</div>}
 		</div>
 	);
+};
+
+Icon.propTypes = {
+	img: PropTypes.string,
+	name: PropTypes.string,
+	bg: PropTypes.string,
+	text: PropTypes.string,
+	hover: PropTypes.bool,
+	skeleton: PropTypes.bool,
+	size: PropTypes.string,
 };
 
 export default Icon;

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
+
 const useStyles = createUseStyles({
 	ul: {
 		padding: "0.5em 1em",
@@ -66,5 +68,15 @@ function Breadcrumb({ pathname, list }) {
 		</div>
 	);
 }
+
+Breadcrumb.propTypes = {
+	pathname: PropTypes.string.isRequired,
+	list: PropTypes.arrayOf(
+		PropTypes.shape({
+			url: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+		})
+	),
+};
 
 export default Breadcrumb;

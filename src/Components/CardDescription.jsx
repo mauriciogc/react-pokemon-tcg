@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
 
 import CustomContainer from "./CustomContainer";
 import H2 from "./H2";
@@ -26,6 +27,15 @@ const CardDescription = ({ data }) => {
 			))}
 		</CustomContainer>
 	);
+};
+
+CardDescription.propTypes = {
+	data: PropTypes.shape({
+		title: PropTypes.string.isRequired,
+		text: PropTypes.arrayOf(PropTypes.string),
+		type: PropTypes.string,
+		color: PropTypes.string,
+	}),
 };
 
 export default CardDescription;

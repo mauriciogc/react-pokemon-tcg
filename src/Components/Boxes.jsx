@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { createUseStyles } from "react-jss";
-
+import PropTypes from "prop-types";
 import Icon from "../Components/Icon";
 
 const useStyles = createUseStyles({
@@ -32,6 +32,19 @@ const Boxes = ({ boxes }) => {
 			)}
 		</Fragment>
 	);
+};
+
+Boxes.propTypes = {
+	boxes: PropTypes.arrayOf(
+		PropTypes.shape({
+			index: PropTypes.string.isRequired,
+			name: PropTypes.string,
+			bg: PropTypes.string,
+			img: PropTypes.string,
+			text: PropTypes.string,
+			size: PropTypes.string,
+		})
+	),
 };
 
 export default Boxes;

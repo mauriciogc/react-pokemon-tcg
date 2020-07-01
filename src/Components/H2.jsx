@@ -1,5 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
+
 const useStyles = createUseStyles({
 	h2: {
 		width: ({ width }) => width,
@@ -19,6 +21,13 @@ const H2 = ({ children, text = "", color = "#4e5761", width = "100%" }) => {
 			{children} {text}
 		</h2>
 	);
+};
+
+H2.propTypes = {
+	children: PropTypes.any,
+	text: PropTypes.string,
+	color: PropTypes.string,
+	width: PropTypes.string,
 };
 
 export default H2;

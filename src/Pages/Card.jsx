@@ -11,7 +11,8 @@ import Loading from "../Components/Loading";
 import Icon from "../Components/Icon";
 import Title from "../Components/Title";
 
-import CARD from "../Mocks/Card";
+//import CARD from "../Mocks/Card";
+import useCard from "../Hooks/useCard";
 
 const useStyles = createUseStyles({
 	container: {
@@ -46,7 +47,10 @@ const useStyles = createUseStyles({
 const Card = () => {
 	const { id } = useParams();
 	const classes = useStyles();
-	const { card } = CARD;
+	//const { card } = CARD;
+	const { card } = useCard(id);
+	if (!card) return <Loading middle />;
+	if (card === "Error") return <Redirect to="/error404" />;
 
 	const {
 		svgImage,
@@ -59,9 +63,6 @@ const Card = () => {
 		rules,
 		miscellaneous,
 	} = card;
-
-	if (!card) return <Loading middle />;
-	if (card === "Error") return <Redirect to="/error404" />;
 
 	return (
 		<div className={classes.container}>

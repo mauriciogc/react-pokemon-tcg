@@ -62,7 +62,8 @@ let defaultGlobal = {
     },
   },
   listTypes: [],
-  cardsByType:{}
+  cardsByType:{},
+  cardsById:{},
 };
 
 export { defaultGlobal };

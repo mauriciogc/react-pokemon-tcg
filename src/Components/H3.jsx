@@ -1,5 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
+
 const useStyles = createUseStyles({
 	h3: {
 		fontSize: "1.1rem",
@@ -18,6 +20,12 @@ const H3 = ({ children, text = "", color = "#151b22" }) => {
 			{children} {text}
 		</h3>
 	);
+};
+
+H3.propTypes = {
+	children: PropTypes.any,
+	text: PropTypes.string,
+	color: PropTypes.string,
 };
 
 export default H3;

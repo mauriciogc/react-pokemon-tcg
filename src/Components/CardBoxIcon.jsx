@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
 
 import Boxes from "./Boxes";
 import CustomContainer from "./CustomContainer";
@@ -17,7 +18,7 @@ const useStyles = createUseStyles({
 	},
 });
 
-const CardBoxIcon = ({ data }) => {
+const CardBoxIcon = ({ data = {} }) => {
 	const classes = useStyles();
 
 	return (
@@ -30,6 +31,15 @@ const CardBoxIcon = ({ data }) => {
 			))}
 		</CustomContainer>
 	);
+};
+
+CardBoxIcon.propTypes = {
+	data: PropTypes.arrayOf(
+		PropTypes.shape({
+			title: PropTypes.string.isRequired,
+			boxes: PropTypes.array,
+		})
+	),
 };
 
 export default CardBoxIcon;

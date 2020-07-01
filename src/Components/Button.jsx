@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
 
 const useStyles = createUseStyles({
 	container: {
@@ -36,6 +37,12 @@ const Button = ({ text, handleEvent, color = "#ed1d25" }) => {
 			</button>
 		</div>
 	);
+};
+
+Button.propTypes = {
+	text: PropTypes.string.isRequired,
+	handleEvent: PropTypes.func.isRequired,
+	color: PropTypes.string,
 };
 
 export default Button;

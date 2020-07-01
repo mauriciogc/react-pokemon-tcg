@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import PropTypes from "prop-types";
 
 import H1 from "./H1";
 import H2 from "./H2";
@@ -39,4 +40,11 @@ const Title = ({ children, title = "", subtitle = "", text = "", color }) => {
 	);
 };
 
+Title.propTypes = {
+	children: PropTypes.any,
+	title: PropTypes.string,
+	subtitle: PropTypes.string,
+	text: PropTypes.string,
+	color: PropTypes.string,
+};
 export default Title;
