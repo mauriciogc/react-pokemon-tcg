@@ -4,7 +4,7 @@
 
 
 ## You can see the tutorial here
---- Coming soon ---
+[See tutorial](https://mauriciogc.medium.com/react-creando-una-app-de-pok%C3%A9mon-trading-card-game-con-hooks-usestate-useeffect-y-custom-4a47cf86d42)
 
 ## You can see a live demo here
 * [Pokemon vercel.com pages](https://react-pokemon-tcg.vercel.app/)
